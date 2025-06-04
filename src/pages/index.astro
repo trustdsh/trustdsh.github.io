@@ -1,171 +1,326 @@
 ---
 import Base from "../layouts/base.astro";
+import { pages } from "../configs/pages";
 ---
 
 <Base>
-  <main class="max-w-6xl mx-auto px-4 py-16">
-    <h1>🧑‍🚀 Hello, Astronaut!</h1>
-    <p>
-      Welcome to the official <a href="https://astro.build/">Astro</a> blog starter
-      template. This template serves as a lightweight, minimally-styled starting
-      point for anyone looking to build a personal website, blog, or portfolio with
-      Astro.
-    </p>
-    <p>
-      This template comes with a few integrations already configured in your
-      <code>astro.config.mjs</code> file. You can customize your setup with
-      <a href="https://astro.build/integrations">Astro Integrations</a> to add tools
-      like Tailwind, React, or Vue to your project.
-    </p>
-    <p>Here are a few ideas on how to get started with the template:</p>
-    <ul>
-      <li>Edit this page in <code>src/pages/index.astro</code></li>
-      <li>
-        Edit the site header items in <code>src/components/Header.astro</code>
-      </li>
-      <li>
-        Add your name to the footer in <code>src/components/Footer.astro</code>
-      </li>
-      <li>
-        Check out the included blog posts in <code>src/content/blog/</code>
-      </li>
-      <li>
-        Customize the blog post page layout in <code
-          >src/layouts/BlogPost.astro</code
+  <main class="max-w-6xl mx-auto px-4 py-16 flex flex-col gap-8 md:gap-16">
+    <section id="hero">
+      <h2 class="font-doto text-lg mb-2">
+        <span data-notation="box" data-notation-color="#e62753">TrustD</span>
+      </h2>
+      <h1 class="font-doto text-2xl mb-4">
+        No-Nonsense
+        <a class="hover:cursor-pointer" href={pages.license.path}
+          ><span
+            class="mx-2"
+            data-notation="bracket"
+            data-notation-color="#aaaaff"
+            data-notation-hover-color="#6666ff">Source Available</span
+          ></a
         >
-      </li>
-    </ul>
-    <p>
-      Welcome to the official <a href="https://astro.build/">Astro</a> blog starter
-      template. This template serves as a lightweight, minimally-styled starting
-      point for anyone looking to build a personal website, blog, or portfolio with
-      Astro.
-    </p>
-    <p>
-      This template comes with a few integrations already configured in your
-      <code>astro.config.mjs</code> file. You can customize your setup with
-      <a href="https://astro.build/integrations">Astro Integrations</a> to add tools
-      like Tailwind, React, or Vue to your project.
-    </p>
-    <p>Here are a few ideas on how to get started with the template:</p>
-    <ul>
-      <li>Edit this page in <code>src/pages/index.astro</code></li>
-      <li>
-        Edit the site header items in <code>src/components/Header.astro</code>
-      </li>
-      <li>
-        Add your name to the footer in <code>src/components/Footer.astro</code>
-      </li>
-      <li>
-        Check out the included blog posts in <code>src/content/blog/</code>
-      </li>
-      <li>
-        Customize the blog post page layout in <code
-          >src/layouts/BlogPost.astro</code
+        <a class="hover:cursor-pointer" href={pages.about.path}
+          ><span class="mx-2">Universal Access Control</span></a
         >
-      </li>
-    </ul>
-    <p>
-      Welcome to the official <a href="https://astro.build/">Astro</a> blog starter
-      template. This template serves as a lightweight, minimally-styled starting
-      point for anyone looking to build a personal website, blog, or portfolio with
-      Astro.
-    </p>
-    <p>
-      This template comes with a few integrations already configured in your
-      <code>astro.config.mjs</code> file. You can customize your setup with
-      <a href="https://astro.build/integrations">Astro Integrations</a> to add tools
-      like Tailwind, React, or Vue to your project.
-    </p>
-    <p>Here are a few ideas on how to get started with the template:</p>
-    <ul>
-      <li>Edit this page in <code>src/pages/index.astro</code></li>
-      <li>
-        Edit the site header items in <code>src/components/Header.astro</code>
-      </li>
-      <li>
-        Add your name to the footer in <code>src/components/Footer.astro</code>
-      </li>
-      <li>
-        Check out the included blog posts in <code>src/content/blog/</code>
-      </li>
-      <li>
-        Customize the blog post page layout in <code
-          >src/layouts/BlogPost.astro</code
+        <br />
+        <a class="hover:cursor-pointer" href={pages.audit.path}
+          ><span
+            class="mx-2"
+            data-notation="underline"
+            data-notation-color="#52387b88"
+            data-notation-hover-color="#52387b">Governance</span
+          ></a
         >
-      </li>
-    </ul>
-    <p>
-      Welcome to the official <a href="https://astro.build/">Astro</a> blog starter
-      template. This template serves as a lightweight, minimally-styled starting
-      point for anyone looking to build a personal website, blog, or portfolio with
-      Astro.
-    </p>
-    <p>
-      This template comes with a few integrations already configured in your
-      <code>astro.config.mjs</code> file. You can customize your setup with
-      <a href="https://astro.build/integrations">Astro Integrations</a> to add tools
-      like Tailwind, React, or Vue to your project.
-    </p>
-    <p>Here are a few ideas on how to get started with the template:</p>
-    <ul>
-      <li>Edit this page in <code>src/pages/index.astro</code></li>
-      <li>
-        Edit the site header items in <code>src/components/Header.astro</code>
-      </li>
-      <li>
-        Add your name to the footer in <code>src/components/Footer.astro</code>
-      </li>
-      <li>
-        Check out the included blog posts in <code>src/content/blog/</code>
-      </li>
-      <li>
-        Customize the blog post page layout in <code
-          >src/layouts/BlogPost.astro</code
+        and
+        <a class="hover:cursor-pointer" href={pages.secure.path}
+          ><span
+            class="mx-2"
+            data-notation="underline"
+            data-notation-color="#9e405888"
+            data-notation-hover-color="#9e4058">Enforcement</span
+          ></a
         >
-      </li>
-    </ul>
-    <p>
-      Welcome to the official <a href="https://astro.build/">Astro</a> blog starter
-      template. This template serves as a lightweight, minimally-styled starting
-      point for anyone looking to build a personal website, blog, or portfolio with
-      Astro.
-    </p>
-    <p>
-      This template comes with a few integrations already configured in your
-      <code>astro.config.mjs</code> file. You can customize your setup with
-      <a href="https://astro.build/integrations">Astro Integrations</a> to add tools
-      like Tailwind, React, or Vue to your project.
-    </p>
-    <p>Here are a few ideas on how to get started with the template:</p>
-    <ul>
-      <li>Edit this page in <code>src/pages/index.astro</code></li>
-      <li>
-        Edit the site header items in <code>src/components/Header.astro</code>
-      </li>
-      <li>
-        Add your name to the footer in <code>src/components/Footer.astro</code>
-      </li>
-      <li>
-        Check out the included blog posts in <code>src/content/blog/</code>
-      </li>
-      <li>
-        Customize the blog post page layout in <code
-          >src/layouts/BlogPost.astro</code
+      </h1>
+      <div class="p-4 grid grid-cols-1 md:grid-cols-2">
+        <div class="p-2 md:p-8 flex flex-col">VIDEO HERE</div>
+        <div class="p-2 md:p-8 flex flex-col items-center md:items-left">
+          <a class="hover:cursor-pointer m-4" href={pages.demo.path}>
+            <span
+              class="mx-2 text-2xl font-doto"
+              data-notation="highlight"
+              data-notation-color="#e6275355"
+              data-notation-hover-color="#e62753aa">Book A Demo</span
+            >
+          </a>
+          <a
+            class="hover:cursor-pointer m-4"
+            href="#"
+            onclick="alert('Coming Soon!')"
+          >
+            <span
+              class="mx-2 font-semibold text-xl"
+              data-notation="bracket"
+              data-notation-color="#52387baa"
+              data-notation-hover-color="#52387b">Playground</span
+            >
+          </a>
+        </div>
+      </div>
+    </section>
+    <hr class="border-t-4 border-dotted" />
+    <section id="about" class="flex flex-col gap-16">
+      <div class="flex flex-col gap-4">
+        <h3 class="font-doto text-lg">
+          <span class="mx-2" data-notation="box" data-notation-color="#e62753"
+            >TrustD</span
+          >
+        </h3>
+      </div>
+      <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+        <section id="audit" class="flex flex-col gap-4">
+          <h3 class="font-doto text-lg">
+            TrustD <span
+              class="mx-2"
+              data-notation="bracket"
+              data-notation-color="#52387b">Audit</span
+            >
+          </h3>
+          <p>
+            TrustD Audit is a source available (<a
+              class="hover:cursor-pointer"
+              href={pages.license.path}>License</a
+            >) access control governance solution that allows you to write
+            central identity rulesets and audit for access events. You can:
+          </p>
+          <ul class="list-disc pl-6">
+            <li>
+              Write rulesets in <a
+                class="cursor-pointer"
+                href="https://www.openpolicyagent.org/docs/policy-language"
+                target="_blank"
+                rel="noreferrer">rego</a
+              > to define who has access to what using custom tags for resources.
+            </li>
+            <li>
+              Use TrustD Audit to figure out who uses what by querying based on
+              the custom tags
+            </li>
+            <li>
+              Use TrustD Audit to get alerts programmatically when rules are
+              broken
+            </li>
+            <li>
+              Have your CI/CD query TrustD Audit to figure out if a policy
+              change will impact your access rules
+            </li>
+            <li class="text-gray-700">
+              Have more ideas? Let us know <a href={pages.contact.path}
+                >directly</a
+              > or on <a href={pages.discord.path}>Discord</a>!
+            </li>
+          </ul>
+          <div class="flex flex-col gap-2">
+            <a class="hover:cursor-pointer m-2" href={pages.docs.path}>
+              <span
+                class="mx-2 px-2 font-semibold text-xl"
+                data-notation="highlight"
+                data-notation-color="#52387b44"
+                data-notation-hover-color="#52387b99">Launch An Instance</span
+              >
+            </a>
+            <a class="hover:cursor-pointer m-2" href={pages.support.path}>
+              <span
+                class="mx-2 font-semibold text-xl"
+                data-notation="bracket"
+                data-notation-color="#9e4058"
+                data-notation-hover-color="#9e405855">Want Us To Host?</span
+              >
+            </a>
+          </div>
+        </section>
+        <section id="secure" class="flex flex-col gap-4">
+          <h3 class="font-doto text-lg">
+            TrustD <span
+              class="mx-2"
+              data-notation="bracket"
+              data-notation-color="#9e4058">Secure</span
+            >
+          </h3>
+          <p>
+            Have your rulesets defined but don't want to write code to automate
+            enforcement? TrustD Secure enforces your existing TrustD Audit
+            rulesets by:
+          </p>
+          <ul class="list-disc pl-6">
+            <li>
+              Creating and managing your access control policies in the end
+              systems (IAM Roles on AWS, Users and Grants on MySql, etc.)
+            </li>
+            <li>
+              Automatically alerting you on Slack (or whatever else you use)
+              when a ruleset change causes issues with existing access.
+            </li>
+            <li>
+              Actively blocking access at various levels (network via firewall
+              or vpn rules, access via IAM, etc)
+            </li>
+            <li class="text-gray-700">
+              Have more ideas? Let us know <a href={pages.contact.path}
+                >directly</a
+              > or on <a href={pages.discord.path}>Discord</a>!
+            </li>
+          </ul>
+          <p>
+            Our goal is to make it <span
+              class="mx-2"
+              data-notation="underline"
+              data-notation-color="#9e4058">ridiculously easy</span
+            > for you to manage access, and access doesn't just stop at identity.
+          </p>
+          <div class="flex flex-col gap-2">
+            <a class="hover:cursor-pointer m-2" href={pages.docs.path}>
+              <span
+                class="mx-2 px-2 font-semibold text-xl"
+                data-notation="highlight"
+                data-notation-color="#9e405844"
+                data-notation-hover-color="#9e405899">Talk To Us</span
+              >
+            </a>
+          </div>
+        </section>
+      </div>
+    </section>
+    <hr class="border-t-4 border-dotted" />
+    <section id="pricing">
+      <h1>
+        <span
+          class="mx-2 text-lg font-doto"
+          data-notation="box"
+          data-notation-color="#e62753">Pricing</span
         >
-      </li>
-    </ul>
-    <p>
-      Have fun! If you get stuck, remember to
-      <a href="https://docs.astro.build/">read the docs</a>
-      or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-    </p>
-    <p>
-      Looking for a blog template with a bit more personality? Check out
-      <a href="https://github.com/Charca/astro-blog-template"
-        >astro-blog-template</a
-      >
-      by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-    </p>
+      </h1>
+      <div class="grid grid-cols-1 md:grid-cols-4 py-4 items-start gap-4">
+        <div class="flex flex-col justify-center items-center text-center">
+          <h2 class="font-doto text-lg m-4">
+            <span
+              class="m-2"
+              data-notation="bracket"
+              data-notation-color="#52387b">Audit</span
+            ><br /><br />
+            <span
+              class="m-2 px-2"
+              data-notation="highlight"
+              data-notation-color="#52387b33"
+            >
+              Self Hosted</span
+            >
+          </h2>
+          <h1 class="text-xl text-center">Free!</h1>
+          <p class="text-center">Who could have guessed!</p>
+          <br />
+          <a class="hover:cursor-pointer m-2" href={pages.docs.path}
+            ><span
+              class="mx-2 px-2 font-semibold text-xl"
+              data-notation="highlight"
+              data-notation-color="#52387b22"
+              data-notation-hover-color="#52387b99">Deploy</span
+            ></a
+          >
+        </div>
+        <div class="flex flex-col justify-center items-center text-center">
+          <h2 class="font-doto text-lg m-4">
+            <span
+              class="m-2"
+              data-notation="bracket"
+              data-notation-color="#52387b">Audit</span
+            >
+            <br /><br />
+            <span
+              class="m-2 px-2"
+              data-notation="highlight"
+              data-notation-color="#52387b33"
+            >
+              AWS Marketplace</span
+            >
+          </h2>
+          <h1 class="text-xl text-center">0.7 $/Hr</h1>
+          <p class="text-center">+ Resource Costs</p>
+          <br />
+          <a class="hover:cursor-pointer m-2" href={pages.docs.path}
+            ><span
+              class="mx-2 px-2 font-semibold text-xl"
+              data-notation="highlight"
+              data-notation-color="#52387b22"
+              data-notation-hover-color="#52387b99">Deploy</span
+            ></a
+          >
+        </div>
+        <div class="flex flex-col justify-center items-center text-center">
+          <h2 class="font-doto text-lg m-4">
+            <span
+              class="m-2"
+              data-notation="bracket"
+              data-notation-color="#52387b">Audit</span
+            >
+            <br /><br />
+            <span
+              class="m-2 px-2"
+              data-notation="highlight"
+              data-notation-color="#52387b33"
+            >
+              Cloud</span
+            >
+          </h2>
+          <h1 class="text-xl text-center">1000 $/Mo</h1>
+          <p class="text-center">+ Resource Costs</p>
+          <br />
+          <p>
+            Since this is security critical and connects to your core infra, we
+            always create new tenants and never share tenants.
+          </p><br />
+          <a class="hover:cursor-pointer m-2" href={pages.docs.path}
+            ><span
+              class="mx-2 px-2 font-semibold text-xl"
+              data-notation="highlight"
+              data-notation-color="#52387b22"
+              data-notation-hover-color="#52387b99">Get Started</span
+            ></a
+          >
+        </div>
+        <div class="flex flex-col justify-center items-center text-center">
+          <h2 class="font-doto text-lg m-4">
+            <span
+              class="m-2"
+              data-notation="bracket"
+              data-notation-color="#9e4058">Secure</span
+            >
+            <br /><br />
+            <span
+              class="m-2 px-2"
+              data-notation="highlight"
+              data-notation-color="#9e405833"
+            >
+              Enterprise</span
+            >
+          </h2>
+          <h1 class="text-xl text-center">Early Access Pricing</h1>
+          <br />
+          <p>
+            As we're in the early stages of our journey, we work closely with
+            each customer to understand their unique needs and provide tailored
+            solutions. As an early adopter, you'll receive preferential pricing
+            that reflects your valuable role in shaping our product.
+          </p><br />
+          <a class="hover:cursor-pointer m-2" href={pages.docs.path}
+            ><span
+              class="mx-2 px-2 font-semibold text-xl"
+              data-notation="highlight"
+              data-notation-color="#9e405822"
+              data-notation-hover-color="#9e405888">Contact Us</span
+            ></a
+          >
+        </div>
+      </div>
+    </section>
   </main>
 </Base>

@@ -32,3 +32,6 @@ body {
 .font-doto {
 	font-family: 'Doto', sans-serif;
 }
+a {
+	cursor: pointer;
+}

@@ -43,9 +43,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
             | "highlight"
             | "strike-through"
             | "bracket";
-          return annotate(el, {
+          const color = getNotationOption(el, "color", "red");
+          const annotation = annotate(el, {
             type,
-            color: getNotationOption(el, "color", "red"),
+            color,
             animate: false,
             multiline: type === "bracket" ? false : true,
             brackets: (getNotationOption(el, "brackets")?.split(
@@ -53,6 +54,16 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
             ) as BracketType[]) || ["left", "right"],
             strokeWidth: Number(getNotationOption(el, "strokeWidth", "1.5")),
           });
+          const hoverColor = getNotationOption(el, "hover-color");
+          if (hoverColor) {
+            el.onmouseenter = () => {
+              annotation.color = hoverColor;
+            };
+            el.onmouseleave = () => {
+              annotation.color = color;
+            };
+          }
+          return annotation;
         });
       annotationGroup(annotations).show();
     </script>

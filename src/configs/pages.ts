@@ -1,15 +1,15 @@
 export const pages = {
     audit: {
         title: 'Audit',
-        path: '/product/audit',
+        path: '/#audit',
     },
     secure: {
         title: 'Secure',
-        path: '/product/secure',
+        path: '/#secure',
     },
     pricing: {
         title: 'Pricing',
-        path: '/product/pricing',
+        path: '/#pricing',
     },
     docs: {
 
@@ -66,6 +66,10 @@ export const pages = {
     },
     about: {
         title: 'About',
-        path: '/',
-    }
+        path: '/#about',
+    },
+    license: {
+        title: 'License',
+        path: '/legal/audit-license',
+    },
 }
