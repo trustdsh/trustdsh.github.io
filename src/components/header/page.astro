@@ -1,0 +1,9 @@
+---
+import Link from "./link.astro";
+
+type Props = { page: { title: string; path: string } };
+
+const { page } = Astro.props;
+---
+
+<Link href={page.path}>{page.title}</Link>

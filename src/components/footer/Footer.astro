@@ -1,0 +1,53 @@
+---
+const today = new Date();
+import FooterBox from "./dashed-box.astro";
+import { pages } from "../../configs/pages";
+import Li from "./lipage.astro";
+import Sep from "./seppage.astro";
+---
+
+<footer class="py-16 px-2 md:px-4 max-w-6xl mx-auto">
+  <nav class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+    <FooterBox>
+      <h2 class="text-lg underline font-doto pb-3">Company</h2>
+      <ul class="list-none pl-0">
+        <Li page={pages.about} />
+        <Li page={pages.careers} />
+        <Li page={pages.blog} />
+        <Li page={pages.contact} />
+      </ul>
+    </FooterBox>
+    <FooterBox>
+      <h2 class="text-lg underline font-doto pb-3">Product</h2>
+      <ul class="list-none pl-0">
+        <Li page={pages.audit} />
+        <Li page={pages.secure} />
+        <Li page={pages.pricing} />
+      </ul>
+    </FooterBox>
+    <FooterBox>
+      <h2 class="text-lg underline font-doto pb-3">Resources</h2>
+      <ul class="list-none pl-0">
+        <Li page={pages.docs} />
+        <Li page={pages.support} />
+      </ul>
+    </FooterBox>
+    <FooterBox>
+      <h2 class="text-lg underline font-doto pb-3">Open Source</h2>
+      <ul class="list-none pl-0">
+        <Li page={pages.github} />
+        <Li page={pages.discord} />
+      </ul>
+    </FooterBox>
+  </nav>
+  <div class="border border-dashed border-t-0 p-2">
+    <div class="flex flex-col md:flex-row items-center justify-left">
+      <Sep page={pages.privacy} />
+      <Sep page={pages.terms} />
+      <Sep page={pages.cookies} />
+    </div>
+    <span class="text-gray-800">
+      &copy; {today.getFullYear()} Accessing, Inc. All rights reserved.
+    </span>
+  </div>
+</footer>

@@ -1,0 +1,42 @@
+---
+import HeaderPage from "./page.astro";
+import HeaderLink from "./link.astro";
+import { pages } from "../../configs/pages";
+import S from "../ui/separator.astro";
+---
+
+<header>
+  <nav class="hidden md:flex flex-row items-center py-2 px-8 max-w-6xl mx-auto">
+    <a href="/" class="px-4 flex flex-row gap-1 items-center">
+      <img src="/logos/256.png" alt="TrustD" class="h-8" />
+    </a>
+    <div
+      class="flex flex-row gap-3 flex-1 items-center justify-start text-sm font-medium"
+    >
+      <HeaderPage page={pages.audit} />
+      <S />
+      <HeaderPage page={pages.secure} />
+      <S />
+      <HeaderPage page={pages.pricing} />
+      <S />
+      <HeaderPage page={pages.docs} />
+      <S />
+      <HeaderPage page={pages.blog} />
+      <S />
+      <HeaderPage page={pages.github} />
+      <S />
+      <HeaderPage page={pages.contact} />
+    </div>
+    <div class="flex flex-row gap-3 items-center text-sm font-medium">
+      <HeaderPage page={pages.login} />
+      <S />
+      <HeaderPage page={pages.register} />
+      <S />
+      <HeaderLink href={pages.demo.path}>
+        <span data-notation="highlight" data-notation-color="#e6275366"
+          >{pages.demo.title}</span
+        >
+      </HeaderLink>
+    </div>
+  </nav>
+</header>

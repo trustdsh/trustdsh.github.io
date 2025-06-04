@@ -1,0 +1,60 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/header/Header.astro";
+import Footer from "../components/footer/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+    <script>
+      import { annotate, annotationGroup } from "rough-notation";
+      import type { BracketType } from "rough-notation/lib/model";
+      const notations = document.querySelectorAll("span[data-notation]");
+      function getNotationOption(
+        el: HTMLElement,
+        key: string,
+        defaultValue?: string
+      ): string | undefined {
+        const value =
+          el.dataset[
+            `notation${key
+              .split("-")
+              .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
+              .join("")}`
+          ];
+        return value ?? defaultValue;
+      }
+      const annotations = new Array(notations.length)
+        .fill(0)
+        .map((_, index) => {
+          const el = notations[index] as HTMLSpanElement;
+          const type = getNotationOption(el, "", "underline") as
+            | "underline"
+            | "circle"
+            | "crossed-off"
+            | "highlight"
+            | "strike-through"
+            | "bracket";
+          return annotate(el, {
+            type,
+            color: getNotationOption(el, "color", "red"),
+            animate: false,
+            multiline: type === "bracket" ? false : true,
+            brackets: (getNotationOption(el, "brackets")?.split(
+              ","
+            ) as BracketType[]) || ["left", "right"],
+            strokeWidth: Number(getNotationOption(el, "strokeWidth", "1.5")),
+          });
+        });
+      annotationGroup(annotations).show();
+    </script>
+  </body>
+</html>

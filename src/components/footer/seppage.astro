@@ -1,0 +1,10 @@
+---
+type Props = { page: { title: string; path: string } };
+
+const { page } = Astro.props;
+---
+
+<a
+  class="not-first:border-t md:not-first:border-l md:not-first:border-t-0 not-first:border-gray-300 px-2"
+  href={page.path}>{page.title}</a
+>

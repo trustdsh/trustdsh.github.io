@@ -1,0 +1,7 @@
+---
+type Props = { page: { title: string; path: string } };
+
+const { page } = Astro.props;
+---
+
+<li><a href={page.path}>{page.title}</a></li>
