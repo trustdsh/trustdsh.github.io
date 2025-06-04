@@ -2,13 +2,13 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/header/Header.astro";
 import Footer from "../components/footer/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+const DESCRIPTION = `TrustD is a no-nonsense, source-available universal access control system that provides governance and enforcement for your systems.`;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead title={"TrustD"} description={DESCRIPTION} />
   </head>
   <body class="w-screen h-min-screen py-16">
     <Header />

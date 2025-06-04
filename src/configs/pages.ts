@@ -52,17 +52,17 @@ export const pages = {
         title: 'Cookies',
         path: '/legal/cookies',
     },
-    login: {
-        title: 'Login',
-        path: '/login',
-    },
+    // login: {
+    //     title: 'Login',
+    //     path: '/contact',
+    // },
     register: {
         title: 'Get Started',
-        path: '/login',
+        path: '/contact',
     },
     demo: {
         title: 'Book a Demo',
-        path: '/demo',
+        path: '/contact',
     },
     about: {
         title: 'About',
