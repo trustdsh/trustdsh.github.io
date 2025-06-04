@@ -39,4 +39,22 @@ import S from "../ui/separator.astro";
       </HeaderLink>
     </div>
   </nav>
+  <nav class="md:hidden flex flex-row items-center py-2 px-2 mx-auto">
+    <a href="/" class="px-4 flex flex-row gap-1 items-center">
+      <img src="/logos/256.png" alt="TrustD" class="h-8" />
+    </a>
+    <div
+      class="flex flex-row gap-3 flex-1 items-center justify-end text-sm font-medium"
+    >
+      <HeaderPage page={pages.pricing} />
+      <S />
+      <HeaderPage page={pages.blog} />
+      <S />
+      <HeaderLink href={pages.demo.path}>
+        <span data-notation="highlight" data-notation-color="#e6275366"
+          >{pages.demo.title}</span
+        >
+      </HeaderLink>
+    </div>
+  </nav>
 </header>
