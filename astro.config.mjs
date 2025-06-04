@@ -9,9 +9,11 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://trustd.sh',
   integrations: [mdx(), sitemap(), react()],
-
+  build: {
+    assets: 'assets',
+  },
   vite: {
     plugins: [tailwindcss()],
   },
