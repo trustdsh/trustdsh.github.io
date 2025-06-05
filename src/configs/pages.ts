@@ -26,7 +26,7 @@ export const pages = {
     },
     discord: {
         title: 'Discord',
-        path: '#',
+        path: 'https://discord.gg/uddjvRC2WU',
     },
     contact: {
         title: 'Contact',

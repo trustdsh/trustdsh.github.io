@@ -9,23 +9,24 @@ import { pages } from "../configs/pages";
       <h2 class="font-doto text-lg mb-2">
         <span data-notation="box" data-notation-color="#e62753">TrustD</span>
       </h2>
-      <h1 class="font-doto text-2xl mb-4">
+      <h1 class="font-doto text-2xl mb-4 text-center md:text-left">
         No-Nonsense
+        <br class="block md:hidden" />
         <a class="hover:cursor-pointer" href={pages.license.path}
           ><span
-            class="mx-2"
+            class="m-2"
             data-notation="bracket"
             data-notation-color="#aaaaff"
             data-notation-hover-color="#6666ff">Source Available</span
           ></a
         >
         <a class="hover:cursor-pointer" href={pages.about.path}
-          ><span class="mx-2">Universal Access Control</span></a
+          ><span class="m-2">Universal Access Control</span></a
         >
         <br />
         <a class="hover:cursor-pointer" href={pages.audit.path}
           ><span
-            class="mx-2"
+            class="m-2"
             data-notation="underline"
             data-notation-color="#52387b88"
             data-notation-hover-color="#52387b">Governance</span
@@ -34,7 +35,7 @@ import { pages } from "../configs/pages";
         and
         <a class="hover:cursor-pointer" href={pages.secure.path}
           ><span
-            class="mx-2"
+            class="m-2"
             data-notation="underline"
             data-notation-color="#9e405888"
             data-notation-hover-color="#9e4058">Enforcement</span
@@ -42,7 +43,11 @@ import { pages } from "../configs/pages";
         >
       </h1>
       <div class="p-4 grid grid-cols-1 md:grid-cols-2">
-        <div class="p-2 md:p-8 flex flex-col">VIDEO HERE</div>
+        <div class="p-2 md:p-8 flex flex-col justify-center items-center">
+          <span data-notation="box" data-notation-color="#e62753"
+            >We're actively developing this right now. More updates soon!</span
+          >
+        </div>
         <div class="p-2 md:p-8 flex flex-col items-center md:items-left">
           <a class="hover:cursor-pointer m-4" href={pages.demo.path}>
             <span
@@ -113,6 +118,7 @@ import { pages } from "../configs/pages";
           </div>
         </div>
       </div>
+      <hr class="border-t-2 border-gray-200 border-dotted md:hidden" />
       <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
         <section id="audit" class="flex flex-col gap-4">
           <h3 class="font-doto text-lg">
@@ -175,6 +181,7 @@ import { pages } from "../configs/pages";
             </a>
           </div>
         </section>
+        <hr class="border-t-2 border-gray-200 border-dotted md:hidden" />
         <section id="secure" class="flex flex-col gap-4">
           <h3 class="font-doto text-lg">
             TrustD <span
@@ -237,7 +244,7 @@ import { pages } from "../configs/pages";
         >
       </h1>
       <div class="grid grid-cols-1 md:grid-cols-4 py-4 items-start gap-4">
-        <div class="flex flex-col justify-center items-center text-center">
+        <div class="flex flex-col justify-center items-center text-center py-4">
           <h2 class="font-doto text-lg m-4">
             <span
               class="m-2"
@@ -264,7 +271,8 @@ import { pages } from "../configs/pages";
             ></a
           >
         </div>
-        <div class="flex flex-col justify-center items-center text-center">
+        <hr class="border-t-2 border-gray-200 border-dotted md:hidden" />
+        <div class="flex flex-col justify-center items-center text-center py-4">
           <h2 class="font-doto text-lg m-4">
             <span
               class="m-2"
@@ -292,7 +300,8 @@ import { pages } from "../configs/pages";
             ></a
           >
         </div>
-        <div class="flex flex-col justify-center items-center text-center">
+        <hr class="border-t-2 border-gray-200 border-dotted md:hidden" />
+        <div class="flex flex-col justify-center items-center text-center py-4">
           <h2 class="font-doto text-lg m-4">
             <span
               class="m-2"
@@ -324,7 +333,8 @@ import { pages } from "../configs/pages";
             ></a
           >
         </div>
-        <div class="flex flex-col justify-center items-center text-center">
+        <hr class="border-t-2 border-gray-200 border-dotted md:hidden" />
+        <div class="flex flex-col justify-center items-center text-center py-4">
           <h2 class="font-doto text-lg m-4">
             <span
               class="m-2"
