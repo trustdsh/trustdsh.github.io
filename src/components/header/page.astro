@@ -1,9 +1,9 @@
 ---
 import Link from "./link.astro";
 
-type Props = { page: { title: string; path: string } };
+type Props = { page: { title: string; path: string; external?: boolean } };
 
 const { page } = Astro.props;
 ---
 
-<Link href={page.path}>{page.title}</Link>
+<Link href={page.path} external={page.external}>{page.title}</Link>

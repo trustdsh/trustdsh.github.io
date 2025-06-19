@@ -1,0 +1,133 @@
+---
+import Base from "../layouts/base.astro";
+---
+
+<Base title="Our company">
+  <main
+    class="max-w-6xl mx-auto px-4 py-16 flex flex-col gap-8 md:gap-16 items-center"
+  >
+    <section
+      id="about"
+      class="max-w-2xl p-4 md:p-8 text-lg border-2 border-dashed border-gray-300 rounded-sm leading-8"
+    >
+      <div class="flex flex-row items-end justify-start gap-4">
+        <img src="/logos/guard.png" alt="A Fierce Patcha" class="h-12" />
+        <h2 class="font-doto text-lg mb-4">
+          <span data-notation="underline" data-notation-color="#e62753"
+            >TrustD</span
+          >
+        </h2>
+      </div>
+
+      <br />
+
+      <p><strong>Dear Reader,</strong></p>
+
+      <section>
+        <p>
+          <strong>TrustD</strong> aims to make access control—whether IAM, network
+          policies, or anything else—<strong>ridiculously easy</strong>.
+        </p>
+      </section>
+
+      <section>
+        <h2>Why this matters</h2>
+        <p>
+          Managing entitlements, audits, and access policies today means
+          unpacking layers of implicit, undocumented rules. It's unreliable,
+          error‑prone—and frankly, no one enjoys it. Worse, we've seen security
+          erode when tools become too complex or pricey, or when identities are
+          structured for GitOps convenience at the expense of least privilege.
+          Security shouldn't demand sacrificing your sanity—or your budget.
+        </p>
+      </section>
+
+      <section>
+        <h2>The AI‑Agent Explosion</h2>
+        <p>
+          As AI agents begin accessing internal systems and data, access
+          complexity will skyrocket. You'll need to frequently add and remove
+          agents, fine‑tune permissions tightly, and stay vigilant. Manual
+          management here is a recipe for chaos—both significantly reducing
+          performance of security teams and increasing your time-to-prod for
+          agents.
+        </p>
+      </section>
+
+      <section>
+        <h2>Why we built TrustD</h2>
+        <ul>
+          <li>
+            <strong>Make implicit rules explicit</strong>—define who can (and
+            can't!) do what.
+          </li>
+          <li>
+            <strong>Extend access control beyond IAM</strong>—to firewalls,
+            VPNs, and any other system.
+          </li>
+          <li>
+            Let teams—compliance, DevOps, security, IT—work independently,
+            without drowning each other in tools (or worse, endless meetings!)
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>What we believe</h2>
+
+        <ul>
+          <li>
+            <strong>Policy-as-code for IAM & Network Access</strong
+            >—declarative, auditable, version-controlled.
+          </li>
+          <li>
+            <strong>Fanatical focus on UX</strong>—we obsess over making access
+            control intuitive and even enjoyable.
+          </li>
+          <li>
+            <strong>Open standards, not black boxes</strong>—we build on
+            Rego/Opa and other open tools, not hidden proprietary systems.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>What we're working on</h2>
+        <p>
+          We're in early stages, focused on our open-source audit agent—to
+          deliver plug-and-play visibility and governance for access controls.
+        </p>
+      </section>
+
+      <section>
+        <p>With optimism and resolve,</p>
+        <p>
+          <strong
+            >Vaishnav<br />
+            Founder &amp; CEO <br />
+            TrustD / Accessing Inc</strong
+          >
+        </p>
+      </section>
+    </section>
+  </main>
+</Base>
+
+<style>
+  @reference "tailwindcss";
+  section {
+    @apply mb-6;
+  }
+
+  h2 {
+    @apply text-lg font-bold mb-2;
+  }
+
+  ul {
+    @apply list-disc list-inside;
+  }
+
+  ol {
+    @apply list-decimal list-inside;
+  }
+</style>

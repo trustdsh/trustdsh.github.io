@@ -1,48 +1,20 @@
 ---
 import Base from "../../layouts/base.astro";
 import { pages } from "../../configs/pages";
+import CompanyTagline from "../../components/CompanyTagline.astro";
 ---
 
 <Base>
   <main class="max-w-6xl mx-auto px-4 py-16 flex flex-col gap-8 md:gap-16">
     <section>
-      <h2 class="font-doto text-lg mb-2">
-        <span data-notation="box" data-notation-color="#e62753">TrustD</span>
-      </h2>
-      <h1 class="font-doto text-2xl mb-4">
-        No-Nonsense
-        <a class="hover:cursor-pointer" href={pages.license.path}
-          ><span
-            class="mx-2"
-            data-notation="bracket"
-            data-notation-color="#aaaaff"
-            data-notation-hover-color="#6666ff">Source Available</span
-          ></a
-        >
-        <a class="hover:cursor-pointer" href={pages.about.path}
-          ><span class="mx-2">Universal Access Control</span></a
-        >
-        <br />
-        <a class="hover:cursor-pointer" href={pages.audit.path}
-          ><span
-            class="mx-2"
-            data-notation="underline"
-            data-notation-color="#52387b88"
-            data-notation-hover-color="#52387b">Governance</span
-          ></a
-        >
-        and
-        <a class="hover:cursor-pointer" href={pages.secure.path}
-          ><span
-            class="mx-2"
-            data-notation="underline"
-            data-notation-color="#9e405888"
-            data-notation-hover-color="#9e4058">Enforcement</span
-          ></a
-        >
-      </h1>
+      <CompanyTagline />
     </section>
     <section>
+      <img
+        src="/logos/playful.png"
+        alt="A Playful Patcha"
+        class="h-32 md:ml-4"
+      />
       <h1 class="text-2xl">😖️ Blog Coming Soon!</h1>
       <h3 class="text-lg">
         We know you're disappointed, so enjoy this XKCD Comic instead:
