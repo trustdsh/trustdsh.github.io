@@ -1,7 +1,13 @@
 ---
-type Props = { page: { title: string; path: string } };
+type Props = { page: { title: string; path: string; external?: boolean } };
 
 const { page } = Astro.props;
 ---
 
-<li><a href={page.path}>{page.title}</a></li>
+<li>
+  <a
+    href={page.path}
+    target={page.external ? "_blank" : "_self"}
+    rel={page.external ? "noreferrer" : ""}>{page.title}</a
+  >
+</li>

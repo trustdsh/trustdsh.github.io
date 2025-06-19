@@ -1,51 +1,17 @@
 ---
 import Base from "../layouts/base.astro";
 import { pages } from "../configs/pages";
+import CompanyTagline from "../components/CompanyTagline.astro";
 ---
 
 <Base>
   <main class="max-w-6xl mx-auto px-4 py-16 flex flex-col gap-8 md:gap-16">
     <section id="hero">
-      <h2 class="font-doto text-lg mb-2">
-        <span data-notation="box" data-notation-color="#e62753">TrustD</span>
-      </h2>
-      <h1 class="font-doto text-2xl mb-4 text-center md:text-left">
-        No-Nonsense
-        <br class="block md:hidden" />
-        <a class="hover:cursor-pointer" href={pages.license.path}
-          ><span
-            class="m-2"
-            data-notation="bracket"
-            data-notation-color="#aaaaff"
-            data-notation-hover-color="#6666ff">Source Available</span
-          ></a
-        >
-        <a class="hover:cursor-pointer" href={pages.about.path}
-          ><span class="m-2">Universal Access Control</span></a
-        >
-        <br />
-        <a class="hover:cursor-pointer" href={pages.audit.path}
-          ><span
-            class="m-2"
-            data-notation="underline"
-            data-notation-color="#52387b88"
-            data-notation-hover-color="#52387b">Governance</span
-          ></a
-        >
-        and
-        <a class="hover:cursor-pointer" href={pages.secure.path}
-          ><span
-            class="m-2"
-            data-notation="underline"
-            data-notation-color="#9e405888"
-            data-notation-hover-color="#9e4058">Enforcement</span
-          ></a
-        >
-      </h1>
+      <CompanyTagline />
       <div class="p-4 grid grid-cols-1 md:grid-cols-2">
         <div class="p-2 md:p-8 flex flex-col justify-center items-center">
           <span data-notation="box" data-notation-color="#e62753"
-            >We're actively developing this right now. More updates soon!</span
+            >Demo Video incoming on July 1st!</span
           >
         </div>
         <div class="p-2 md:p-8 flex flex-col items-center md:items-left">
@@ -57,16 +23,12 @@ import { pages } from "../configs/pages";
               data-notation-hover-color="#e62753aa">Book A Demo</span
             >
           </a>
-          <a
-            class="hover:cursor-pointer m-4"
-            href="#"
-            onclick="alert('Coming Soon!')"
-          >
+          <a class="hover:cursor-pointer m-4" href={pages.docs.path}>
             <span
               class="mx-2 font-semibold text-xl"
               data-notation="bracket"
               data-notation-color="#52387baa"
-              data-notation-hover-color="#52387b">Playground</span
+              data-notation-hover-color="#52387b">Get Started</span
             >
           </a>
         </div>
@@ -159,7 +121,11 @@ import { pages } from "../configs/pages";
             <li class="text-gray-700">
               Have more ideas? Let us know <a href={pages.contact.path}
                 >directly</a
-              > or on <a href={pages.discord.path}>Discord</a>!
+              > or on <a
+                target="_blank"
+                rel="noreferrer"
+                href={pages.discord.path}>Discord</a
+              >!
             </li>
           </ul>
           <div class="flex flex-col gap-2">
@@ -211,7 +177,11 @@ import { pages } from "../configs/pages";
             <li class="text-gray-700">
               Have more ideas? Let us know <a href={pages.contact.path}
                 >directly</a
-              > or on <a href={pages.discord.path}>Discord</a>!
+              > or on <a
+                target="_blank"
+                rel="noreferrer"
+                href={pages.discord.path}>Discord</a
+              >!
             </li>
           </ul>
           <p>

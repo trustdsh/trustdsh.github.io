@@ -1,0 +1,25 @@
+---
+type Props = {
+  strings: string[];
+};
+const { strings } = Astro.props as Props;
+---
+
+<span id="typed-header-usecases" data-strings={JSON.stringify(strings)}></span>
+
+<script>
+  import Typed from "typed.js";
+  const typed = new Typed("#typed-header-usecases", {
+    strings: JSON.parse(
+      document
+        .getElementById("typed-header-usecases")
+        ?.getAttribute("data-strings") ??
+        '["AI Agents", "People", "Networks", "Clouds"]'
+    ),
+    typeSpeed: 20,
+    backSpeed: 10,
+    loop: true,
+    backDelay: 5000,
+  });
+  typed.start();
+</script>

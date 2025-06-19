@@ -1,0 +1,90 @@
+---
+import { pages } from "../configs/pages";
+import CompanyTitleTyped from "./ui/company-title-typed.astro";
+
+const randomizePairs = (
+  entities: string[],
+  resources: string[]
+): string[][] => {
+  // create all pairs of entities and resources and randomize array
+  // such that no two adjacent elements have the same entity or resource
+  const pairs = [];
+  for (const entity of entities) {
+    for (const resource of resources) {
+      pairs.push([entity, resource]);
+    }
+  }
+  return pairs.toSorted(() => Math.random() - 0.5);
+};
+
+const entities = ["People", "AI Agents"];
+const resources = [
+  "Networks",
+  "Clouds",
+  "VPN Resources",
+  "Databases",
+  "Files",
+  "SSH",
+];
+const entityResourcePairs = randomizePairs(entities, resources);
+const usecases = entityResourcePairs.map(
+  ([entity, resource]) => `${entity} using ${resource}`
+);
+---
+
+<div
+  class="flex flex-col items-center justify-center max-w-6xl md:justify-start md:items-start"
+>
+  <h2 class="font-doto text-lg mb-2 text-gray-400">
+    Universal Access Control for Entitlements and Network Access
+  </h2>
+  <h1 class="font-doto text-3xl mb-4 text-center md:text-left leading-12">
+    <span data-notation="box" data-notation-color="#e62753" class="mx-2"
+      >TrustD</span
+    > defines and enforces access across <span
+      data-notation="underline"
+      data-notation-color="#e62753"
+      data-notation-hover-color="#e62753">everything</span
+    >—<br />
+    even <CompanyTitleTyped strings={usecases} />
+  </h1>
+  <h3
+    class="font-doto text-lg mb-4 text-center md:text-left text-gray-500 max-w-4xl"
+  >
+    For orgs that need to replace tribal knowledge and brittle scripts with
+    consistent, scalable access across people, agents, networks, and clouds.
+  </h3>
+</div>
+<!-- <h1 class="font-doto text-2xl mb-4 text-center md:text-left">
+  No-Nonsense
+  <br class="block md:hidden" />
+  <a class="hover:cursor-pointer" href={pages.license.path}
+    ><span
+      class="m-2"
+      data-notation="bracket"
+      data-notation-color="#aaaaff"
+      data-notation-hover-color="#6666ff">Source Available</span
+    ></a
+  >
+  <a class="hover:cursor-pointer" href={pages.about.path}
+    ><span class="m-2">Universal Access Control</span></a
+  >
+  <br />
+  <a class="hover:cursor-pointer" href={pages.audit.path}
+    ><span
+      class="m-2"
+      data-notation="underline"
+      data-notation-color="#52387b88"
+      data-notation-hover-color="#52387b">Governance</span
+    ></a
+  >
+  and
+  <a class="hover:cursor-pointer" href={pages.secure.path}
+    ><span
+      class="m-2"
+      data-notation="underline"
+      data-notation-color="#9e405888"
+      data-notation-hover-color="#9e4058">Enforcement</span
+    ></a
+  >
+</h1> -->
