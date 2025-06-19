@@ -14,10 +14,30 @@ const randomizePairs = (
       pairs.push([entity, resource]);
     }
   }
-  return pairs.toSorted(() => Math.random() - 0.5);
+
+  const banned = {
+    entity: null as string | null,
+    resource: null as string | null,
+  };
+
+  const randomizedPairs = [];
+
+  for (let i = 0; i < pairs.length; i++) {
+    // pick a random pair from pairs that is not banned
+    const pair = pairs[Math.floor(Math.random() * pairs.length)];
+    if (pair[0] === banned.entity || pair[1] === banned.resource) {
+      i--;
+      continue;
+    }
+    banned.entity = pair[0];
+    banned.resource = pair[1];
+    randomizedPairs.push(pair);
+  }
+
+  return randomizedPairs;
 };
 
-const entities = ["People", "AI Agents"];
+const entities = ["People", "AI Agents", "Machine Identities", "Servers"];
 const resources = [
   "Networks",
   "Clouds",
@@ -25,6 +45,8 @@ const resources = [
   "Databases",
   "Files",
   "SSH",
+  "APIs",
+  "Kubernetes",
 ];
 const entityResourcePairs = randomizePairs(entities, resources);
 const usecases = entityResourcePairs.map(
@@ -33,10 +55,10 @@ const usecases = entityResourcePairs.map(
 ---
 
 <div
-  class="flex flex-col items-center justify-center max-w-6xl md:justify-start md:items-start"
+  class="flex flex-col items-center justify-center max-w-6xl md:justify-start md:items-start px-4 md:px-8"
 >
   <h2 class="font-doto text-lg mb-2 text-gray-400">
-    Universal Access Control for Entitlements and Network Access
+    Universal Access Control for Entitlements, Network Access, and Data Flow
   </h2>
   <h1 class="font-doto text-3xl mb-4 text-center md:text-left leading-12">
     <span data-notation="box" data-notation-color="#e62753" class="mx-2"
@@ -45,46 +67,12 @@ const usecases = entityResourcePairs.map(
       data-notation="underline"
       data-notation-color="#e62753"
       data-notation-hover-color="#e62753">everything</span
-    >—<br />
-    even <CompanyTitleTyped strings={usecases} />
+    > — even <CompanyTitleTyped strings={usecases} />
   </h1>
   <h3
     class="font-doto text-lg mb-4 text-center md:text-left text-gray-500 max-w-4xl"
   >
     For orgs that need to replace tribal knowledge and brittle scripts with
-    consistent, scalable access across people, agents, networks, and clouds.
+    consistent, scalable access across people, agents, networks, and data.
   </h3>
 </div>
-<!-- <h1 class="font-doto text-2xl mb-4 text-center md:text-left">
-  No-Nonsense
-  <br class="block md:hidden" />
-  <a class="hover:cursor-pointer" href={pages.license.path}
-    ><span
-      class="m-2"
-      data-notation="bracket"
-      data-notation-color="#aaaaff"
-      data-notation-hover-color="#6666ff">Source Available</span
-    ></a
-  >
-  <a class="hover:cursor-pointer" href={pages.about.path}
-    ><span class="m-2">Universal Access Control</span></a
-  >
-  <br />
-  <a class="hover:cursor-pointer" href={pages.audit.path}
-    ><span
-      class="m-2"
-      data-notation="underline"
-      data-notation-color="#52387b88"
-      data-notation-hover-color="#52387b">Governance</span
-    ></a
-  >
-  and
-  <a class="hover:cursor-pointer" href={pages.secure.path}
-    ><span
-      class="m-2"
-      data-notation="underline"
-      data-notation-color="#9e405888"
-      data-notation-hover-color="#9e4058">Enforcement</span
-    ></a
-  >
-</h1> -->
