@@ -1,10 +1,10 @@
 ---
-import { pages } from "../configs/pages";
 import CompanyTitleTyped from "./ui/company-title-typed.astro";
 
 const randomizePairs = (
   entities: string[],
-  resources: string[]
+  resources: string[],
+  existingPairs: string[][]
 ): string[][] => {
   // create all pairs of entities and resources and randomize array
   // such that no two adjacent elements have the same entity or resource
@@ -22,16 +22,27 @@ const randomizePairs = (
 
   const randomizedPairs = [];
 
+  let tries = 0;
   for (let i = 0; i < pairs.length; i++) {
     // pick a random pair from pairs that is not banned
     const pair = pairs[Math.floor(Math.random() * pairs.length)];
     if (pair[0] === banned.entity || pair[1] === banned.resource) {
       i--;
-      continue;
+      tries++;
+      if (tries < 10) {
+        continue;
+      }
     }
     banned.entity = pair[0];
     banned.resource = pair[1];
+    tries = 0;
     randomizedPairs.push(pair);
+  }
+
+  // add existing pairs to randomizedPairs at random positions
+  for (const existingPair of existingPairs) {
+    const index = Math.floor(Math.random() * randomizedPairs.length);
+    randomizedPairs.splice(index, 0, existingPair);
   }
 
   return randomizedPairs;
@@ -39,16 +50,17 @@ const randomizePairs = (
 
 const entities = ["People", "AI Agents", "Machine Identities", "Servers"];
 const resources = [
-  "Networks",
-  "Clouds",
-  "VPN Resources",
-  "Databases",
-  "Files",
-  "SSH",
-  "APIs",
-  "Kubernetes",
+  "Networks 📡",
+  "Clouds 🌩️",
+  "VPN Resources 🔒",
+  "Databases 💾",
+  "Files 📁",
+  "SSH 🔑",
+  "APIs 🔗",
+  "Kubernetes 🐳",
 ];
-const entityResourcePairs = randomizePairs(entities, resources);
+const pairs = [["People", "Physical Server Rooms 🚪️"]];
+const entityResourcePairs = randomizePairs(entities, resources, pairs);
 const usecases = entityResourcePairs.map(
   ([entity, resource]) => `${entity} using ${resource}`
 );
@@ -58,7 +70,8 @@ const usecases = entityResourcePairs.map(
   class="flex flex-col items-center justify-center max-w-6xl md:justify-start md:items-start px-4 md:px-8"
 >
   <h2 class="font-doto text-lg mb-2 text-gray-400">
-    Universal Access Control for Entitlements, Network Access, and Data Flow
+    Universal Policy as Code for All Access Control: Entitlements, Network
+    Access, and Data Flow.
   </h2>
   <h1 class="font-doto text-3xl mb-4 text-center md:text-left leading-12">
     <span data-notation="box" data-notation-color="#e62753" class="mx-2"
